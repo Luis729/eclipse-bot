@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: better-sqlite3
+    versions:
+    - 7.1.2
+    - 7.1.4
+  - dependency-name: markdownlint-cli
+    versions:
+    - 0.26.0
+    - 0.27.0
+  - dependency-name: twemoji
+    versions:
+    - 13.0.1
