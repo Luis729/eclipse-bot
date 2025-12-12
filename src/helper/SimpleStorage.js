@@ -19,7 +19,6 @@ class SimpleStorage {
       )
     `);
     
-    // Prepare statements for better performance
     this.getStmt = this.db.prepare('SELECT value FROM storage WHERE key = ?');
     this.setStmt = this.db.prepare('INSERT OR REPLACE INTO storage (key, value) VALUES (?, ?)');
     this.deleteStmt = this.db.prepare('DELETE FROM storage WHERE key = ?');
