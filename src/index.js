@@ -9,8 +9,7 @@ if (devMode) {
 }
 
 const Discord = require('discord.js');
-const Enmap = require('enmap');
-const EnmapLevel = require('enmap-level');
+const SimpleStorage = require('./helper/SimpleStorage.js');
 const fs = require('fs');
 const HandleMessage = require('./helper/HandleMessage.js');
 const {
@@ -38,7 +37,7 @@ function trackDonations() {
 
 require('moment-timezone').tz.setDefault(defaultTimeZone);
 
-client.points = new Enmap({ provider: new EnmapLevel({ name: 'players' }) });
+client.points = new SimpleStorage({ name: 'players' });
 client.commands = new Discord.Collection();
 fs.readdirSync('./src/command').forEach((file) => {
   const Command = require(`./commands/${file}`);
